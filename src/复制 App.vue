@@ -1,23 +1,25 @@
 <template>
   <div id="app">
-  	<div class="loginBg">
-  		<div class="login_container boxsbb">
-  			<div class="loginLogo"></div>
-  			<div class="loginChange">
-  				<ul>
-  					<li>登录</li>
-  					<li>注册</li>
-  				</ul>
-  				<div class="loginbox">
-  					
-  				</div>
-  				<div class="setbox">
-  					
-  				</div>
-  			</div>
-  			<div class="download">
-  				
-  			</div>
+  	<div v-if="loaded">
+	  	<div class="header">
+	  		<div class="headlogo"></div>
+	  	</div>
+	  	<div class="container">
+	  		<div class="sider">
+		      <ul>
+		        <li><router-link to="/">/</router-link></li>
+		        <li><router-link to="/first">/第一页1</router-link></li>
+		        <li><router-link to="/second">/第二页2</router-link></li>
+		      </ul>
+	  		</div>
+	  		<div class="main">
+		      <router-view class="view"></router-view>
+	  		</div>
+	  	</div>
+  	</div>
+  	<div v-else>
+  		<div class="loadpage" v-on:click="checkInfo">
+  			123
   		</div>
   	</div>
   </div>
